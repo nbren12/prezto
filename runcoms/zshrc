@@ -11,3 +11,41 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+#
+# Get CIMS defaults
+#
+if [ -r /usr/local/lib/.system.kshrc ] ; then
+    . /usr/local/lib/.system.kshrc
+    export PYTHONPATH=""
+fi
+
+# nvim
+alias gv=nyaovim
+alias nv=nvim
+
+alias g='git'
+alias gls='git status -s | less'
+
+
+alias ed='emacs --daemon'
+alias ec='emacsclient -c'
+
+
+alias ssh='ssh -Y'
+
+alias screen='screen -R'
+alias p='pushd'
+alias o='popd' 
+alias d='dirs -v'
+
+alias lmk='latexmk -pdf -pvc'
+alias pyhttp='python -m SimpleHTTPServer'
+alias ml='matlab -nodesktop -nosplash'
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# dotfiles
+export DOTFILES=$HOME/.dotfiles
+export PATH=$DOTFILES/bin:$PATH

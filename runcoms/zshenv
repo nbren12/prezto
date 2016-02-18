@@ -9,3 +9,30 @@
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+
+export EDITOR=nvim
+
+# python
+export PATH=$HOME/usr/bin:/Users/noah/anaconda/bin:$PATH
+# GNL
+export PYTHONPATH=$HOME/Dropbox/gnl:$PYTHONPATH
+
+# emacs
+export PATH=$PATH:/Applications/Emacs.app/Contents/MacOS/bin
+
+# Julia
+export PATH=/Applications/Julia-0.4.0.app/Contents/Resources/julia/bin:$PATH
+
+# R 
+export PATH=/Library/Frameworks/R.framework/Versions/Current/Resources/bin:$PATH
+
+# NCL
+export NCARG_ROOT=/opt/ncl_ncarg-6.3.0.MacOS_10.10_64bit_gcc492
+export PATH=$NCARG_ROOT/bin:$PATH
+
+# Latexlive (for)
+export PATH=/Library/Tex/texbin/:$PATH
+
+# go 
+export PATH=~/.gocode/bin:$PATH
