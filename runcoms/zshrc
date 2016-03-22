@@ -10,9 +10,14 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+bindkey -v
+export EDITOR=nvim
+export VISUAL=$EDITOR
+
 # Customize to your needs...
 
 source ~/.zshenv
+source ~/.dotfiles/shell/bash/funalias.sh
 
 #
 # Get CIMS defaults
@@ -51,9 +56,22 @@ if  type nvim  > /dev/null ; then
 fi
 
 
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # dotfiles
 export DOTFILES=$HOME/.dotfiles
 export PATH=$DOTFILES/bin:$PATH
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# open coarrays
+[ -f /opt/OpenCoarrays-1.3.6/opencoarrays-installation/setup.sh ] && source /opt/OpenCoarrays-1.3.6/opencoarrays-installation/setup.sh
+
+PATH="/Users/noah/perl5/bin${PATH+:}${PATH}"; export PATH;
+PERL5LIB="/Users/noah/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/noah/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/noah/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/noah/perl5"; export PERL_MM_OPT;
+
+# docker
+alias docker_source='eval "$(docker-machine env default)"'

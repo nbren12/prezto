@@ -10,8 +10,6 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-export EDITOR=vim
-
 # python
 export PATH=$HOME/usr/bin:/Users/noah/anaconda/bin:$PATH
 # GNL
@@ -35,3 +33,6 @@ export PATH=/Library/Tex/texbin/:$PATH
 
 # go 
 export PATH=~/.gocode/bin:$PATH
+
+# go app engine
+export PATH=/opt/go_appengine/:$PATH
