@@ -14,52 +14,31 @@ bindkey -v
 export EDITOR=nvim
 export VISUAL=$EDITOR
 
-# Customize to your needs...
-
-source ~/.zshenv
-source ~/.dotfiles/shell/bash/funalias.sh
 
 #
-# Get CIMS defaults
+# Get system defaults
 #
 if [ -r /usr/local/lib/.system.kshrc ] ; then
     . /usr/local/lib/.system.kshrc
     export PYTHONPATH=""
 fi
 
-# nvim
-alias gv=nyaovim
-alias nv=nvim
-
-alias g='git'
-alias gls='git status -s | less'
-
-
-alias ed='emacs --daemon'
-alias ec='emacsclient -c'
-
-
-alias ssh='ssh -Y'
-
-alias screen='screen -R'
-alias p='pushd'
-alias o='popd' 
-alias d='dirs -v'
-
-alias lmk='latexmk -pdf -pvc'
-alias pyhttp='python -m SimpleHTTPServer'
-alias ml='matlab -nodesktop -nosplash'
-
-
-if  type nvim  > /dev/null ; then
-    alias vim=nvim
-fi
-
-
+[[ -e /etc/kshrc ]] && . /etc/kshrc
 
 # dotfiles
 export DOTFILES=$HOME/.dotfiles
 export PATH=$DOTFILES/bin:$PATH
+
+# Common aliases and functions
+
+source ~/.zshenv
+source ~/.dotfiles/shell/bash/funalias.sh
+
+# nvim
+
+if  type nvim  > /dev/null ; then
+    alias vim=nvim
+fi
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -67,11 +46,10 @@ export PATH=$DOTFILES/bin:$PATH
 # open coarrays
 [ -f /opt/OpenCoarrays-1.3.6/opencoarrays-installation/setup.sh ] && source /opt/OpenCoarrays-1.3.6/opencoarrays-installation/setup.sh
 
-PATH="/Users/noah/perl5/bin${PATH+:}${PATH}"; export PATH;
-PERL5LIB="/Users/noah/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/Users/noah/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/Users/noah/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/noah/perl5"; export PERL_MM_OPT;
-
-# docker
-alias docker_source='eval "$(docker-machine env default)"'
+if [[ -e /Users/noah ]]; then
+    PATH="/Users/noah/perl5/bin${PATH+:}${PATH}"; export PATH;
+    PERL5LIB="/Users/noah/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+    PERL_LOCAL_LIB_ROOT="/Users/noah/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+    PERL_MB_OPT="--install_base \"/Users/noah/perl5\""; export PERL_MB_OPT;
+    PERL_MM_OPT="INSTALL_BASE=/Users/noah/perl5"; export PERL_MM_OPT;
+fi
