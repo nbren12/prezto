@@ -53,3 +53,6 @@ if [[ -e /Users/noah ]]; then
     PERL_MB_OPT="--install_base \"/Users/noah/perl5\""; export PERL_MB_OPT;
     PERL_MM_OPT="INSTALL_BASE=/Users/noah/perl5"; export PERL_MM_OPT;
 fi
+
+# vapor
+export PATH=/Applications/VAPOR/VAPOR.app/Contents/MacOS:$PATH
