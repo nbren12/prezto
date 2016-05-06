@@ -52,3 +52,9 @@ export PATH=$HOME/usr/bin:/Users/noah/anaconda/bin:$PATH
 
 # GNL
 export PYTHONPATH=$HOME/Dropbox/gnl:$PYTHONPATH
+
+# Dedalus
+export PYTHONPATH=$HOME/tmp/dedalus
+
+# gcc
+alias gcc='/Users/noah/anaconda/bin/gcc'
